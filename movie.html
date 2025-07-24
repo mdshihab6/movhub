@@ -296,6 +296,47 @@
     }
     document.addEventListener('DOMContentLoaded', renderMovieDetails);
 
+    // --- Dynamic meta tags for social sharing ---
+    function setDynamicMetaTags(movie) {
+        function setMeta(property, content) {
+            let el = document.querySelector(`meta[property='${property}'], meta[name='${property}']`);
+            if (!el) {
+                el = document.createElement('meta');
+                if (property.startsWith('og:')) el.setAttribute('property', property);
+                else el.setAttribute('name', property);
+                document.head.appendChild(el);
+            }
+            el.setAttribute('content', content);
+        }
+        if (movie) {
+            setMeta('og:title', movie.title + ' | PikoHub');
+            setMeta('og:image', movie.bannerLink);
+            setMeta('twitter:title', movie.title + ' | PikoHub');
+            setMeta('twitter:image', movie.bannerLink);
+            setMeta('og:description', 'Download ' + movie.title + ' and more movies on PikoHub.');
+            setMeta('twitter:description', 'Download ' + movie.title + ' and more movies on PikoHub.');
+            setMeta('og:url', window.location.href);
+        } else {
+            // fallback to site defaults
+            setMeta('og:title', 'PikoHub || Best Movie Download Website');
+            setMeta('og:image', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9b9KRfQNvaXBi6MgDGstrMmAK_kVycwJ52ibiBrjsR5x7RIbtoRJsdSFxcMSukEftuWMb6xDgMMryNSYgm_0fDjCsdtusR5ZHL_j-XVc15VVRYSPMnWafSgETCmUyMbR7psSk8I4eP50AWoHyYKheYu561ZSSZviV7QAvZBD9RmIaPyZZM2ppCwdEFA/s500/fticket.jpg');
+            setMeta('twitter:title', 'PikoHub || Best Movie Download Website');
+            setMeta('twitter:image', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9b9KRfQNvaXBi6MgDGstrMmAK_kVycwJ52ibiBrjsR5x7RIbtoRJsdSFxcMSukEftuWMb6xDgMMryNSYgm_0fDjCsdtusR5ZHL_j-XVc15VVRYSPMnWafSgETCmUyMbR7psSk8I4eP50AWoHyYKheYu561ZSSZviV7QAvZBD9RmIaPyZZM2ppCwdEFA/s500/fticket.jpg');
+            setMeta('og:description', 'Download the best movies in all languages and genres.');
+            setMeta('twitter:description', 'Download the best movies in all languages and genres.');
+            setMeta('og:url', window.location.href);
+        }
+    }
+    // Call after movie is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        const id = getQueryParam('id');
+        let movie = null;
+        if (window.movies && id) {
+            movie = window.movies.find(m => m.id == id);
+        }
+        setDynamicMetaTags(movie);
+    });
+
     // --- Menu submenu slide toggle (desktop & mobile) ---
     function setupMenuSlide() {
         // Both desktop and mobile navs
