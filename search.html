@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Search Results | PikoHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    <img src="./logo.png" alt="PikoHub.com Logo" class="logo-img" />
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="main-menu">
+                    <li class="menu-item">
+                        <a href="#">Movies</a>
+                        <ul class="submenu">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Hindi</a></li>
+                            <li><a href="#">Telugu</a></li>
+                            <li><a href="#">Tamil</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Genres</a>
+                        <ul class="submenu">
+                            <li><a href="#">Anime</a></li>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Adventure</a></li>
+                            <li><a href="#">Biography</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Special Categories</a>
+                        <ul class="submenu">
+                            <li><a href="#">Top 250 Movies</a></li>
+                            <li><a href="#">Oscar Winning Movies</a></li>
+                            <li><a href="#">Movies & TV Series</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search-section">
+                <form class="desktop-search" id="search-form" onsubmit="return false;">
+                    <input type="text" id="search-input" placeholder="Search...">
+                    <button type="button" id="search-btn"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="mobile-search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+        <form class="mobile-search-bar" id="mobile-search-form" onsubmit="return false;">
+            <input type="text" id="mobile-search-input" placeholder="Search...">
+            <button type="button" id="mobile-search-btn"><i class="fas fa-search"></i></button>
+        </form>
+    </header>
+    <nav class="mobile-nav">
+        <ul class="main-menu">
+            <li class="menu-item">
+                <a href="#">Movies</a>
+                <ul class="submenu">
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Hindi</a></li>
+                    <li><a href="#">Telugu</a></li>
+                    <li><a href="#">Tamil</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#">Genres</a>
+                <ul class="submenu">
+                    <li><a href="#">Anime</a></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Biography</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#">Special Categories</a>
+                <ul class="submenu">
+                    <li><a href="#">Top 250 Movies</a></li>
+                    <li><a href="#">Oscar Winning Movies</a></li>
+                    <li><a href="#">Movies & TV Series</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="sub-header">
+        <div class="letters-container">
+            <a href="#A">A</a>
+            <a href="#B">B</a>
+            <a href="#C">C</a>
+            <a href="#D">D</a>
+            <a href="#E">E</a>
+            <a href="#F">F</a>
+            <a href="#G">G</a>
+            <a href="#H">H</a>
+            <a href="#I">I</a>
+            <a href="#J">J</a>
+            <a href="#K">K</a>
+            <a href="#L">L</a>
+            <a href="#M">M</a>
+            <a href="#N">N</a>
+            <a href="#O">O</a>
+            <a href="#P">P</a>
+            <a href="#Q">Q</a>
+            <a href="#R">R</a>
+            <a href="#S">S</a>
+            <a href="#T">T</a>
+            <a href="#U">U</a>
+            <a href="#V">V</a>
+            <a href="#W">W</a>
+            <a href="#X">X</a>
+            <a href="#Y">Y</a>
+            <a href="#Z">Z</a>
+        </div>
+    </div>
+    <div class="content-wrapper">
+    <main style="max-width:1200px;margin:5px auto 0 auto;padding:2rem 1rem;">
+
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <h1 class="section-title" style="margin-bottom:1.5rem;">Search Results</h1>
+        <div id="search-results-grid" class="movie-grid"></div>
+        <div id="no-results-message" style="display:none;color:#ccc;font-size:1.3em;text-align:center;margin-top:2rem;">No results found.</div>
+    </main>
+    <aside>
+        <h3>Categories</h3>
+        <ul class="category-list">
+          <li>Oscar Winning Movies</li>
+          <li>IMDb Top 250 Movies</li>
+          <li>Anime</li>
+          <li>DC, Marvel or Superhero Movies & TV Series</li>
+          <li>4K ULTRA-HD 2160p</li>
+          <li>2K 1080p Full HD</li>
+          <li>Sports Related Movies</li>
+          <li>Animation & Cartoon Movies</li>
+          <li>Bollywood Hindi Movies</li>
+          <li>English (Hollywood)</li>
+          <li>Tamil</li>
+          <li>Telugu</li>
+          <li>Malayalam</li>
+          <li>Kannada</li>
+          <li>Korean</li>
+          <li>Japanese & Chinese</li>
+          <li>Turkish</li>
+          <li>Spanish</li>
+          <li>Dual Audio</li>
+          <li>Hindi Dubbed</li>
+          <li>HEVC Collection</li>
+          <li>TV & Web Series</li>
+          <li>TV Show</li>
+          <li>Foreign Movies OR Other Industry (Mixed)</li>
+        </ul>
+      </aside>
+      
+</div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/">
+                    <img src="./logo.png" alt="PikoHub.com Logo" class="logo-img" />
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2025 PikoHub.com All rights reserved.
+            </div>
+        </div>
+        
+    </footer>
+    <script src="movies.js"></script>
+    <script>
+    // Helper to get query param
+    function getQueryParam(name) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name) || '';
+    }
+    // Render search results
+    function renderSearchResults(query) {
+        const grid = document.getElementById('search-results-grid');
+        const noResults = document.getElementById('no-results-message');
+        if (!window.movies) return;
+        const q = query.trim().toLowerCase();
+        const results = window.movies.filter(m => m.title.toLowerCase().includes(q));
+        grid.innerHTML = '';
+        if (!results.length) {
+            grid.style.display = 'none';
+            noResults.style.display = 'block';
+            return;
+        }
+        grid.style.display = 'grid';
+        noResults.style.display = 'none';
+        grid.innerHTML = results.map(m => `
+            <a class="movie-card" href="movie.html?id=${m.id}">
+                <div class="movie-image">
+                    <img src="${m.bannerLink}" alt="${m.title}">
+                    <span class="movie-category">${m.categories[0]}</span>
+                </div>
+                <div class="movie-info">
+                    <div class="movie-rating"><i class="fas fa-star"></i> <span>${m.imdbRating}</span></div>
+                    <h3 class="movie-title"><i class="fas fa-film"></i> ${m.title}</h3>
+                    <div class="movie-release-date">${m.releaseDate}</div>
+                </div>
+            </a>
+        `).join('');
+    }
+    // Handle search bar submit
+    function handleSearchBar(inputId) {
+        const input = document.getElementById(inputId);
+        if (!input) return;
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const q = input.value.trim();
+                if (q) {
+                    window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+                }
+            }
+        });
+    }
+    function handleSearchBtn(btnId, inputId) {
+        const btn = document.getElementById(btnId);
+        const input = document.getElementById(inputId);
+        if (!btn || !input) return;
+        btn.addEventListener('click', function() {
+            const q = input.value.trim();
+            if (q) {
+                window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+            }
+        });
+    }
+    // Wait for movies to be ready
+    function waitForMoviesAndRender() {
+        if (window.movies && Array.isArray(window.movies)) {
+            const query = getQueryParam('q');
+            document.getElementById('search-input').value = query;
+            document.getElementById('mobile-search-input').value = query;
+            renderSearchResults(query);
+        } else {
+            setTimeout(waitForMoviesAndRender, 50);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        waitForMoviesAndRender();
+        handleSearchBar('search-input');
+        handleSearchBar('mobile-search-input');
+        handleSearchBtn('search-btn', 'search-input');
+        handleSearchBtn('mobile-search-btn', 'mobile-search-input');
+    });
+    // Mobile menu and submenu slide toggle (reuse from script.js)
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+        const mobileNav = document.querySelector('.mobile-nav');
+        if (mobileMenuIcon && mobileNav) {
+            mobileMenuIcon.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+                const icon = mobileMenuIcon.querySelector('i');
+                if (mobileNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            mobileNav.querySelectorAll('.menu-item > a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains('submenu')) {
+                        e.preventDefault();
+                        mobileNav.querySelectorAll('.submenu').forEach(sm => {
+                            if (sm !== submenu) {
+                                sm.style.maxHeight = null;
+                                sm.classList.remove('open');
+                                const closedLink = sm.parentElement.querySelector('a');
+                                if (closedLink) {
+                                    closedLink.classList.remove('submenu-open');
+                                }
+                            }
+                        });
+                        if (submenu.classList.contains('open')) {
+                            submenu.style.maxHeight = null;
+                            submenu.classList.remove('open');
+                            this.classList.remove('submenu-open');
+                        } else {
+                            submenu.style.maxHeight = submenu.scrollHeight + 'px';
+                            submenu.classList.add('open');
+                            this.classList.add('submenu-open');
+                        }
+                    }
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html> 
